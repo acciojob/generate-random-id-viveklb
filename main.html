@@ -1,15 +1,47 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random String Generator</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+  </style>
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+  <h2>Random String Generator</h2>
+
+  <script>
+    function makeid(l) {
+      const characters =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+      let result = "";
+
+      l = Number(l);
+
+      for (let i = 0; i < l; i++) {
+        const randomIndex = Math.floor(
+          Math.random() * characters.length
+        );
+
+        result += characters[randomIndex];
+      }
+
+      return result;
+    }
+
+    // Do not change the code below.
+    const l = prompt("Enter a number.");
+    alert(makeid(l));
+  </script>
 
 </body>
 
